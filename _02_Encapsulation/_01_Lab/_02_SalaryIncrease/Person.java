@@ -1,3 +1,5 @@
+package _02_Encapsulation._01_Lab._02_SalaryIncrease
+
 public class Person {
     private String firstName;
     private String lastName;
