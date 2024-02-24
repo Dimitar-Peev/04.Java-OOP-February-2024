@@ -1,4 +1,4 @@
-package _04_FirstAndReserveTeam;
+package _02_Encapsulation._01_Lab._04_FirstAndReserveTeam;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package _04_FirstAndReserveTeam;
+package _02_Encapsulation._01_Lab._04_FirstAndReserveTeam;
 
 public class Person {
     private final static String TO_STRING_TEMPLATE = "%s %s gets %f leva";
