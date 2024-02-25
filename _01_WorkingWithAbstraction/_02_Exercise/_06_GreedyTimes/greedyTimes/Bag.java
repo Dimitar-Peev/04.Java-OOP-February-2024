@@ -48,7 +48,7 @@ public class Bag {
     }
 
     public void addGold(long quantity) {
-        if (currentTotalQuantity + quantity <= capacity) {
+        if (hasFreeCapacity(quantity)) {
             this.goldIsAdded = true;
             this.gold += quantity;
             this.currentTotalQuantity += quantity;
