@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class _05_JediGalaxy {
     public static void main(String[] args) {
 
-
         Scanner scanner = new Scanner(System.in);
 
         int[] dimensions = readPositions(scanner.nextLine());
