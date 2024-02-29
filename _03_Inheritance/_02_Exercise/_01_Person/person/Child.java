@@ -1,4 +1,4 @@
-package _01_Person;
+package _03_Inheritance._02_Exercise._01_Person.person;
 
 public class Child extends Person {
     public  Child(String name, int age) {
