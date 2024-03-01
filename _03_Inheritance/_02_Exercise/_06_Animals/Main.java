@@ -1,4 +1,4 @@
-package _03_Inheritance._02_Exercise._06_Animals;
+package animals;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,53 +9,42 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        String input = scanner.nextLine();
-
         List<Animal> animals = new ArrayList<>();
 
-        while (!"Beast!".equals(input)) {
-            String[] tokens = scanner.nextLine().split("\\s+");
-            String name = tokens[0];
-            int age = Integer.parseInt(tokens[1]);
+        String animalType = scanner.nextLine();
+        while (!"Beast!".equals(animalType)) {
+            String[] animalInfo = scanner.nextLine().split("\\s+");
+            String name = animalInfo[0];
+            int age = Integer.parseInt(animalInfo[1]);
+            String gender = animalInfo[2];
 
+            Animal animal = null;
             try {
-                switch (input) {
+                switch (animalType) {
                     case "Dog":
-                        String gender = tokens[2];
-                        Dog dog = new Dog(name, age, gender);
-                        animals.add(dog);
+                        animal = new Dog(name, age, gender);
                         break;
                     case "Cat":
-                        gender = tokens[2];
-                        Cat cat = new Cat(name, age, gender);
-                        animals.add(cat);
+                        animal = new Cat(name, age, gender);
                         break;
                     case "Frog":
-                        gender = tokens[2];
-                        Frog frog = new Frog(name, age, gender);
-                        animals.add(frog);
+                        animal = new Frog(name, age, gender);
                         break;
                     case "Kittens":
-                        Kitten kitten = new Kitten(name, age);
-                        animals.add(kitten);
+                        animal = new Kitten(name, age);
                         break;
                     case "Tomcat":
-                        Tomcat tomcat = new Tomcat(name, age);
-                        animals.add(tomcat);
-                        break;
-                    default:
-                        System.out.println("Invalid input!");
+                        animal = new Tomcat(name, age);
                         break;
                 }
+                animals.add(animal);
             } catch (IllegalArgumentException ex) {
                 System.out.println(ex.getMessage());
-            } catch (IndexOutOfBoundsException ex) {
-                System.out.println("Invalid input!");
             }
 
-            input = scanner.nextLine();
+            animalType = scanner.nextLine();
         }
 
-        animals.forEach(System.out::println);
+        animals.forEach(animal -> System.out.println(animal));
     }
 }

@@ -1,6 +1,6 @@
-package _03_Inheritance._02_Exercise._06_Animals;
+package animals;
 
-public class Animal {
+public abstract class Animal {
     private String name;
     private int age;
     private String gender;
@@ -23,9 +23,8 @@ public class Animal {
         return gender;
     }
 
-    public String produceSound() {
-        return null;
-    }
+    public abstract String produceSound();
+
 
     private void setAge(int age) {
         if (age < 0) {
@@ -40,7 +39,7 @@ public class Animal {
     }
 
     private void validateString(String name) {
-        if (name == null || name.trim().isEmpty()) {
+        if (name.isEmpty()) {
             throw new IllegalArgumentException("Invalid input!");
         }
     }
@@ -52,7 +51,11 @@ public class Animal {
 
     @Override
     public String toString() {
-        return String.format("%s%n%s %d %s%n%s", this.getClass().getSimpleName(),
-                this.getName(), this.getAge(), this.getGender(), this.produceSound());
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.getClass().getSimpleName()).append(System.lineSeparator());
+        sb.append(String.format("%s %d %s", this.getName(), this.getAge(), this.getGender())).append(System.lineSeparator());
+        sb.append(produceSound()).append(System.lineSeparator());
+
+        return sb.toString().trim();
     }
 }

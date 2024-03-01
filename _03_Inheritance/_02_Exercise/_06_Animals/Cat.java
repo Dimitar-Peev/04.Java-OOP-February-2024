@@ -1,4 +1,4 @@
-package _03_Inheritance._02_Exercise._06_Animals;
+package animals;
 
 public class Cat extends Animal {
     public Cat(String name, int age, String gender) {
