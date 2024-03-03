@@ -38,11 +38,5 @@ public class Main {
                 .filter(id -> id.endsWith(fakeId))
                 .forEach(System.out::println);
 
-//        String postFix = scanner.nextLine ();
-//        for (Identifiable id : identifiableList) {
-//            if (id.getId ().endsWith (postFix)){
-//                System.out.println (id.getId ());
-//            }
-//        }
     }
 }
