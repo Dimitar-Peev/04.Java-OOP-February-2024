@@ -1,0 +1,6 @@
+package _02_Exercise._03_BirthdayCelebrations;
+
+public interface Person {
+    String getName();
+    int getAge();
+}
