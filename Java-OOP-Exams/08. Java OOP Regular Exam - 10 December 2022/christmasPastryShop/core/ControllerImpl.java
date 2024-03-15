@@ -45,7 +45,7 @@ public class ControllerImpl implements Controller {
             throw new IllegalArgumentException(String.format(FOOD_OR_DRINK_EXIST, type, name));
         }
 		
-		DelicacyType delicacyType = DelicacyType.valueOf(type);
+	    DelicacyType delicacyType = DelicacyType.valueOf(type);
 
         switch (delicacyType) {
             case Gingerbread:
