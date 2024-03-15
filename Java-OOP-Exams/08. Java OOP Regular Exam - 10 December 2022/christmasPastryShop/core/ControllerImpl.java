@@ -39,13 +39,13 @@ public class ControllerImpl implements Controller {
     @Override
     public String addDelicacy(String type, String name, double price) {
 
-        DelicacyType delicacyType = DelicacyType.valueOf(type);
-
         Delicacy delicacy = this.delicacyRepository.getByName(name);
 
         if (delicacy != null) {
             throw new IllegalArgumentException(String.format(FOOD_OR_DRINK_EXIST, type, name));
         }
+		
+		DelicacyType delicacyType = DelicacyType.valueOf(type);
 
         switch (delicacyType) {
             case Gingerbread:
@@ -54,8 +54,6 @@ public class ControllerImpl implements Controller {
             case Stolen:
                 this.delicacyRepository.add(new Stolen(name, price));
                 break;
-            default:
-                throw new IllegalArgumentException("TODO");
         }
 
         return String.format(DELICACY_ADDED, name, type);
@@ -64,13 +62,13 @@ public class ControllerImpl implements Controller {
     @Override
     public String addCocktail(String type, String name, int size, String brand) {
 
-        CocktailType cocktailType = CocktailType.valueOf(type);
-
         Cocktail cocktail = this.cocktailRepository.getByName(name);
 
         if (cocktail != null) {
             throw new IllegalArgumentException(String.format(FOOD_OR_DRINK_EXIST, type, name));
         }
+
+        CocktailType cocktailType = CocktailType.valueOf(type);
 
         switch (cocktailType) {
             case MulledWine:
@@ -79,8 +77,6 @@ public class ControllerImpl implements Controller {
             case Hibernation:
                 this.cocktailRepository.add(new Hibernation(name, size, brand));
                 break;
-            default:
-                throw new IllegalArgumentException("TODO");
         }
 
         return String.format(COCKTAIL_ADDED, name, brand);
@@ -89,13 +85,13 @@ public class ControllerImpl implements Controller {
     @Override
     public String addBooth(String type, int boothNumber, int capacity) {
 
-        BoothType boothType = BoothType.valueOf(type);
-
         Booth booth = this.boothRepository.getByNumber(boothNumber);
 
         if (booth != null) {
             throw new IllegalArgumentException(String.format(BOOTH_EXIST, boothNumber));
         }
+		
+        BoothType boothType = BoothType.valueOf(type);
 
         switch (boothType) {
             case OpenBooth:
@@ -104,8 +100,6 @@ public class ControllerImpl implements Controller {
             case PrivateBooth:
                 this.boothRepository.add(new PrivateBooth(boothNumber, capacity));
                 break;
-            default:
-                throw new IllegalArgumentException("TODO");
         }
 
         return String.format(BOOTH_ADDED, boothNumber);
