@@ -1,3 +1,5 @@
+package _01_Lab;
+
 import java.util.Scanner;
 
 public class _02_SquareRoot {
