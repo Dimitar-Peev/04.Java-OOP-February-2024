@@ -7,26 +7,25 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
-public class TableRepositoryImpl<T> implements TableRepository<T> {
-    //  public class TableRepositoryImpl implements TableRepository<Table> {
-    private Collection<T> models;
+public class TableRepositoryImpl implements TableRepository<Table> {
+    private Collection<Table> models;
 
     public TableRepositoryImpl() {
         this.models = new ArrayList<>();
     }
 
     @Override
-    public Collection<T> getAll() {
-        return Collections.unmodifiableCollection(models);
+    public Collection<Table> getAll() {
+        return Collections.unmodifiableCollection(this.models);
     }
 
     @Override
-    public void add(T model) {
+    public void add(Table model) {
         this.models.add(model);
     }
 
     @Override
-    public T getByNumber(int tableNumber) {
-        return null;
+    public Table getByNumber(int tableNumber) {
+        return this.models.stream().filter(t -> t.getTableNumber() == tableNumber).findFirst().orElse(null);
     }
 }

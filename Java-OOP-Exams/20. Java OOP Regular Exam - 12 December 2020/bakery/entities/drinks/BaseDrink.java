@@ -1,5 +1,6 @@
 package bakery.entities.drinks;
 
+import bakery.common.ExceptionMessages;
 import bakery.entities.drinks.interfaces.Drink;
 
 import static bakery.common.ExceptionMessages.*;
@@ -18,7 +19,7 @@ public abstract class BaseDrink implements Drink {
     }
 
     private void setName(String name) {
-        if (name == null || name.isBlank()) {
+        if (name == null || name.isBlank()) { 
             throw new IllegalArgumentException(INVALID_NAME);
         }
         this.name = name;
