@@ -1,4 +1,4 @@
-package _02_Exercise.blackBoxInteger;
+package _02_Exercise._02_BlackBoxInteger.blackBoxInteger;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
