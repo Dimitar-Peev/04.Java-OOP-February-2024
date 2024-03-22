@@ -22,7 +22,7 @@ public class DatabaseTest {
     }
 
     @Test(expected = OperationNotSupportedException.class)
-    public void when_elementsMoreTha16_then_exceptionThrown() throws OperationNotSupportedException {
+    public void when_elementsMoreThan16_then_exceptionThrown() throws OperationNotSupportedException {
         Integer[] elements = new Integer[17];
          database = new Database(elements);
     }
