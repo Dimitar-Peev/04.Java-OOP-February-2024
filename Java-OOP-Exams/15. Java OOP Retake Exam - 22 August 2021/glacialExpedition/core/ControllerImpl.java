@@ -29,7 +29,21 @@ public class ControllerImpl implements Controller {
     @Override
     public String addExplorer(String type, String explorerName) {
 		
-         Explorer explorer = ExplorerFactory.createExplorer(type, explorerName);
+        Explorer explorer = null;
+
+        switch (type) {
+            case "AnimalExplorer":
+                explorer = new AnimalExplorer(explorerName);
+                break;
+            case "GlacierExplorer":
+                explorer = new GlacierExplorer(explorerName);
+                break;
+            case "NaturalExplorer":
+                explorer = new NaturalExplorer(explorerName);
+                break;
+            default:
+                throw new IllegalArgumentException(EXPLORER_INVALID_TYPE);
+        }
 
         explorers.add(explorer);
 
@@ -41,7 +55,9 @@ public class ControllerImpl implements Controller {
 
         State state = new StateImpl(stateName);
 
-        Collections.addAll(state.getExhibits(), exhibits);
+        for (String exhibit : exhibits) {
+            state.getExhibits().add(exhibit);
+        }
 
         this.states.add(state);
 
