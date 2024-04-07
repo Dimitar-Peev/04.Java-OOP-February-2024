@@ -51,33 +51,33 @@ public class ComputerManagerTests {
 
     @Test(expected = IllegalArgumentException.class)
     public void testGet2() {
-        this.computerManager.getComputer("test_manufacturer",null);
+        this.computerManager.getComputer("test_manufacturer", null);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testGetNonExisting() {
-        this.computerManager.getComputer(computer1.getManufacturer(),computer1.getModel());
+        this.computerManager.getComputer(computer1.getManufacturer(), computer1.getModel());
     }
 
     @Test
-    public void testGetReturnsCorrect(){
+    public void testGetReturnsCorrect() {
         computerManager.addComputer(computer1);
         computerManager.addComputer(computer2);
-        Computer returned = computerManager.getComputer(computer1.getManufacturer(),this.computer1.getModel());
+        Computer returned = computerManager.getComputer(computer1.getManufacturer(), this.computer1.getModel());
         assertNotNull(returned);
     }
 
     @Test
-    public void testGetByManufacturer(){
+    public void testGetByManufacturer() {
         computerManager.addComputer(computer1);
         computerManager.addComputer(computer2);
         List<Computer> list = computerManager.getComputersByManufacturer(computer1.getManufacturer());
         assertNotNull(list);
-        assertEquals(list.get(0).getManufacturer(),computer1.getManufacturer());
+        assertEquals(list.get(0).getManufacturer(), computer1.getManufacturer());
     }
 
     @Test
-    public void testGetByManufacturerWhenEmpty(){
+    public void testGetByManufacturerWhenEmpty() {
         List<Computer> list = computerManager.getComputersByManufacturer(computer1.getManufacturer());
         assertNotNull(list);
         assertTrue(list.isEmpty());
