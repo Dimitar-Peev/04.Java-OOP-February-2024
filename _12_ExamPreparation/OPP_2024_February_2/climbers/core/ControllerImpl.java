@@ -65,8 +65,7 @@ public class ControllerImpl implements Controller {
     public String removeClimber(String climberName) {
 
         Climber climber = this.climberRepository.byName(climberName);
-        //        boolean isRemoved = this.climberRepository.remove(climber);
-        //        if (isRemoved)
+		
         if (null == climber) {
             throw new IllegalArgumentException(String.format(CLIMBER_DOES_NOT_EXIST, climberName));
         }
