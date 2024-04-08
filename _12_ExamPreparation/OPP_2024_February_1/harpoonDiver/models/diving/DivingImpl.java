@@ -1,0 +1,38 @@
+package harpoonDiver.models.diving;
+
+import harpoonDiver.models.diver.Diver;
+import harpoonDiver.models.divingSite.DivingSite;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
+public class DivingImpl implements Diving {
+    @Override
+    public void searching(DivingSite divingSite, Collection<Diver> divers) {
+
+        final Collection<String> seaCreatures = divingSite.getSeaCreatures();
+
+      // new ArrayList<>(divingSite.getSeaCreatures());
+
+        divers.forEach(d -> {
+            while (d.canDive() && seaCreatures.iterator().hasNext()) {
+                d.shoot();
+                final String creature = seaCreatures.iterator().next();
+                d.getSeaCatch().getSeaCreatures().add(creature);
+                seaCreatures.remove(creature);
+            }
+        });
+
+        /*
+         Collection<String> divingSits = divingSite.getSeaCreatures();
+         for (Diver diver : divers) {
+            while (diver.canDive() && divingSits.iterator().hasNext()) {
+                diver.shoot();
+                String currentDivingSits = divingSits.iterator().next();
+                diver.getSeaCatch().getSeaCreatures().add(currentDivingSits);
+                divingSits.remove(currentDivingSits);
+            }
+        }
+         */
+    }
+}
