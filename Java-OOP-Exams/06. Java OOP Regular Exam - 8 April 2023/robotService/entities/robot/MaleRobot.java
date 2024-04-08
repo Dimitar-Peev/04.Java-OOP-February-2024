@@ -7,10 +7,6 @@ public class MaleRobot extends BaseRobot{
         super(name, kind, KILOGRAMS, price);
     }
 
-//    @Override
-//    public void eating(){
-//        super.setKilograms(super.getKilograms()+INCREASE);
-//    }
     @Override
     protected int getIncreaseKilograms() {
         return INCREASE;
