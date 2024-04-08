@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.Collections;
 
 public class DivingSiteRepository implements Repository<DivingSite> {
-    private Collection<DivingSite> divingSites; // TODO checkname
+    private Collection<DivingSite> divingSites; 
 
     public DivingSiteRepository() {
         this.divingSites = new ArrayList<>();
