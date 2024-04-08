@@ -12,8 +12,6 @@ public class DivingImpl implements Diving {
 
         final Collection<String> seaCreatures = divingSite.getSeaCreatures();
 
-      // new ArrayList<>(divingSite.getSeaCreatures());
-
         divers.forEach(d -> {
             while (d.canDive() && seaCreatures.iterator().hasNext()) {
                 d.shoot();
@@ -22,17 +20,5 @@ public class DivingImpl implements Diving {
                 seaCreatures.remove(creature);
             }
         });
-
-        /*
-         Collection<String> divingSits = divingSite.getSeaCreatures();
-         for (Diver diver : divers) {
-            while (diver.canDive() && divingSits.iterator().hasNext()) {
-                diver.shoot();
-                String currentDivingSits = divingSits.iterator().next();
-                diver.getSeaCatch().getSeaCreatures().add(currentDivingSits);
-                divingSits.remove(currentDivingSits);
-            }
-        }
-         */
     }
 }
