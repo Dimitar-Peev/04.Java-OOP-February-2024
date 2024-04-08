@@ -8,13 +8,4 @@ public class SecondaryService extends BaseService<FemaleRobot>{
         super(name, CAPACITY);
     }
 
-// part of addRobot ver.1
-//    @Override
-//    public void addRobot(Robot robot) {
-//        if (robot instanceof FemaleRobot) {
-//            super.addRobot(robot);
-//        }
-//
-//        throw  new IllegalArgumentException();
-//    }
 }
