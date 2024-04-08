@@ -9,9 +9,6 @@ public final class StringUtils {
     }
 
     public static String toUnderscoreString(String input) {
-        // MainService -> MAIN_SERVICE
-        // mainService -> MAIN_SERVICE
-        // TODO check "-"
         StringBuilder sb = new StringBuilder();
         char[] chars = input.toCharArray();
         for (int i = 0; i < chars.length; i++) {
