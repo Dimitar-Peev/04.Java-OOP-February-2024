@@ -49,18 +49,6 @@ public abstract class BaseService<T extends Robot> implements Service {
         return this.supplements;
     }
 
-//    // TODO addRobot ver.1
-//    @Override
-//    public void addRobot(Robot robot) {
-//        // TODO check logic
-//        if (this.getRobots().size() == this.capacity) {
-//            throw new IllegalStateException(NOT_ENOUGH_CAPACITY_FOR_ROBOT);
-//        }
-//        this.robots.add(robot);
-//    }
-
-
-    // TODO addRobot ver.2
     @Override
     public void addRobot(Robot robot) {
         Type genericSuperType = this.getClass().getGenericSuperclass();
