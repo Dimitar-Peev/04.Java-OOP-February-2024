@@ -6,10 +6,6 @@ public class FemaleRobot extends BaseRobot{
     public FemaleRobot(String name, String kind, double price) {
         super(name, kind, KILOGRAMS, price);
     }
-//    @Override
-//    public void eating(){
-//        super.setKilograms(super.getKilograms()+INCREASE);
-//    }
 
     @Override
     protected int getIncreaseKilograms() {
