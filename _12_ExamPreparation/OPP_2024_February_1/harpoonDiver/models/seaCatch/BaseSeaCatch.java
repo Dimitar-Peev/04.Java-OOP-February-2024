@@ -10,7 +10,7 @@ public class BaseSeaCatch implements SeaCatch {
 
     }
 
-    @Override  // lazy loading
+    @Override  
     public Collection<String> getSeaCreatures() {
         if (this.seaCreatures == null) {
             this.seaCreatures = new ArrayList<>();
