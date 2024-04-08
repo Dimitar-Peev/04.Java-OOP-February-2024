@@ -9,13 +9,4 @@ public class MainService extends BaseService<MaleRobot> {
         super(name, CAPACITY);
     }
 
-// part of addRobot ver.1
-//    @Override
-//    public void addRobot(Robot robot) {
-//        if (robot instanceof MaleRobot) {
-//            super.addRobot(robot);
-//        }
-//
-//        throw  new IllegalArgumentException();
-//    }
 }
