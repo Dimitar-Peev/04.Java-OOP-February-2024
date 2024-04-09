@@ -71,40 +71,41 @@ public class EngineImpl implements Engine {
         return result;
     }
 
-    private String addAquarium(String[] data) {
-      //TODO
-        return null;
-
+   private String addAquarium(String[] data) {
+        String aquariumType = data[0];
+        String aquariumName = data[1];
+        return controller.addAquarium(aquariumType, aquariumName);
     }
 
     private String addDecoration(String[] data) {
-        //TODO
-        return null;
+        return controller.addDecoration(data[0]);
     }
 
     private String insertDecoration(String[] data) {
-        //TODO
-        return null;
+        String aquariumName = data[0];
+        String decorationType = data[1];
+        return controller.insertDecoration(aquariumName, decorationType);
     }
 
     private String addFish(String[] data) {
-        //{aquariumName} {fishType} {fishName} {fishSpecies} {price}
-        //TODO
-        return null;
+        String aquariumName = data[0];
+        String fishType = data[1];
+        String fishName = data[2];
+        String fishSpecies = data[3];
+        double price = Double.parseDouble(data[4]);
+        return controller.addFish(aquariumName, fishType, fishName, fishSpecies, price);
     }
 
     private String feedFish(String[] data) {
-        //TODO
-        return null;
+        return controller.feedFish(data[0]);
     }
 
     private String calculateValue(String[] data) {
-        //TODO
-        return null;
+        return controller.calculateValue(data[0]);
     }
 
     private String report() {
-        return null;
+        return controller.report();
     }
 }
 
