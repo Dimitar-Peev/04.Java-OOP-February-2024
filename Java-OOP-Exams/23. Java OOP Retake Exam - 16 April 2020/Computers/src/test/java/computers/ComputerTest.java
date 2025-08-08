@@ -12,7 +12,7 @@ public class ComputerTest {
     @Before
     public void setUp() {
         this.computer = new Computer("Lenovo");
-        fillComputerWhitParts();
+        fillComputerWithParts();
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -84,7 +84,7 @@ public class ComputerTest {
         assertNull(computer.getPart("Mouse"));
     }
 
-    private void fillComputerWhitParts() {
+    private void fillComputerWithParts() {
         Part monitor = new Part();
         monitor.setName("Monitor");
         monitor.setPrice(130);
