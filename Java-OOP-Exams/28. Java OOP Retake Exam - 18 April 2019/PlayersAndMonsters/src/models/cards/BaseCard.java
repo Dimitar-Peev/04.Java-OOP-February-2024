@@ -1,5 +1,6 @@
 package models.cards;
 
+import common.ConstantMessages;
 import models.cards.interfaces.Card;
 
 import static common.ExceptionMessages.*;
@@ -50,5 +51,10 @@ public abstract class BaseCard implements Card {
     @Override
     public int getHealthPoints() {
         return this.healthPoints;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(ConstantMessages.CARD_REPORT_INFO, this.getName(),  this.getDamagePoints());
     }
 }
