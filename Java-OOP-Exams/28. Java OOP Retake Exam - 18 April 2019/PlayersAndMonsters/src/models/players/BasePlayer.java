@@ -1,5 +1,6 @@
 package models.players;
 
+import common.ConstantMessages;
 import models.players.interfaces.Player;
 import repositories.interfaces.CardRepository;
 
@@ -69,4 +70,11 @@ public abstract class BasePlayer implements Player {
         }
     }
 
+    @Override
+    public String toString(){
+        return String.format(ConstantMessages.PLAYER_REPORT_INFO,
+                this.getUsername(),
+                this.getHealth(),
+                this.getCardRepository().getCount());
+    }
 }
